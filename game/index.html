@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harbour Morning — Spot the Difference</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main id="app">
+  <header id="topbar">
+    <h1 id="game-title">Harbour Morning</h1>
+    <p id="tagline">Spot the Difference</p>
+  </header>
+
+  <section id="hud" aria-label="Game status">
+    <span id="found-count" class="hud-chip">0 / 7 found</span>
+    <span id="remain-count" class="hud-chip">7 to go</span>
+    <span id="timer" class="hud-chip">3:00</span>
+    <span id="score" class="hud-chip">Score 0</span>
+    <button id="hint-button" type="button">Hint (3 left)</button>
+  </section>
+  <p id="message" role="status" aria-live="polite">Find the 7 differences before the ferry leaves.</p>
+
+  <section id="board">
+    <figure class="panel-wrap">
+      <div id="panel-left" class="panel">
+        <svg id="scene-left" viewBox="0 0 400 300" role="img" aria-label="The harbour as it should be"></svg>
+      </div>
+      <figcaption>Morning harbour</figcaption>
+    </figure>
+    <figure class="panel-wrap">
+      <div id="panel-right" class="panel">
+        <svg id="scene-right" viewBox="0 0 400 300" role="img" aria-label="The harbour with seven small things wrong"></svg>
+      </div>
+      <figcaption>Same harbour, seven small wrongs</figcaption>
+    </figure>
+
+    <div id="title-overlay" class="overlay">
+      <h2>Harbour Morning</h2>
+      <p class="story">The harbour woke up wrong in seven small ways. Find them before the ferry leaves.</p>
+      <p class="howto">Two pictures, seven differences. Click a difference in either picture to mark it.
+        A wrong click costs 5 seconds. You have 3 hints and 3 minutes.</p>
+      <button id="start-button" type="button">Start</button>
+    </div>
+
+    <div id="end-overlay" class="overlay hidden">
+      <h2 id="end-title">The ferry can leave!</h2>
+      <p id="end-text" class="story"></p>
+      <button id="again-button" type="button">Play Again</button>
+    </div>
+  </section>
+</main>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
